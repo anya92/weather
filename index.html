@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Weather App</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="script.js"></script>
@@ -15,15 +17,70 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <h1>Aplikacja pogodowa</h1>
+            <div class="col-md-6 col-xs-12 weatherBox">
+                <p id="date"></p>
+                <p id="location"></p>
+                <p id="summary"></p>
+                <i id="icon" class=""></i>
+                <p id="temperature"></p>
+            </div>
+            <div class="col-md-6 col-xs-12 text-center details">
+                <div class="col-md-6 col-xs-6">
+                    <p><i class="wi wi-thermometer"></i>  Feels Like</p>
+                    <p id="apparentTemperature"></p>
+                    <p><i class="wi wi-cloudy"></i>  Cloud Cover</p>
+                    <p id="cloudCover"></p>
+                    <p><i class="wi wi-humidity"></i>  Humidity</p>
+                    <p id="humidity"></p>
+                </div>
+                <div class="col-md-6 col-xs-6">
+                  <p><i class="wi wi-raindrops"></i>  Chance of <span id="precipType"></span></p>
+                  <p id="precipProbability"></p>
+                  <p><i class="wi wi-barometer"></i>  Pressure</p>
+                  <p id="pressure"></p>
+                  <p><i class="wi wi-strong-wind"></i>  Wind</p>
+                  <p id="windSpeed"></p>
+                </div>
+
+
             </div>
         </div>
-        <div class="row text-center">
-            <div class="col-md-12">
-                <p id="date"></p>
-                <i class="fa fa-map-marker fa-2x"><p id="location">  </p></i>
-                <p id="temperature">Temperatura</p>
+        <div class="row">
+          <div class="col-md-12 col-xs-12 text-left">
+            <p id="forecastSummary"></p>
+          </div>
+        </div>
+        <div class="row forecast text-center">
+
+            <div class="col-md-2 col-xs-6">
+                <p id="one"></p>
+                <i id="icon1" class=""></i>
+                <p id="temp1"></p>
+            </div>
+            <div class="col-md-2 col-xs-6">
+                <p id="two"></p>
+                <i id="icon2" class=""></i>
+                <p id="temp2"></p>
+            </div>
+            <div class="col-md-2 col-xs-6">
+                <p id="three"></p>
+                <i id="icon3" class=""></i>
+                <p id="temp3"></p>
+            </div>
+            <div class="col-md-2 col-xs-6">
+                <p id="four"></p>
+                <i id="icon4" class=""></i>
+                <p id="temp4"></p>
+            </div>
+            <div class="col-md-2 col-xs-6">
+                <p id="five"></p>
+                <i id="icon5" class=""></i>
+                <p id="temp5"></p>
+            </div>
+            <div class="col-md-2 col-xs-6">
+                <p id="six"></p>
+                <i id="icon6" class=""></i>
+                <p id="temp6"></p>
             </div>
 
         </div>
