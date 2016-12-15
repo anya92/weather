@@ -91,7 +91,7 @@ a {
     font-size: 22px;
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 800px) {
     .details p {
         font-size: 18px;
     }
