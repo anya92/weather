@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -9,49 +8,56 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="script.js"></script>
-
+    <link href="https://fonts.googleapis.com/css?family=Advent+Pro:300,500" rel="stylesheet">
 </head>
-
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-xs-12 weatherBox">
-                <p id="date"></p>
-                <p id="location"></p>
-                <p id="summary"></p>
-                <i id="icon" class=""></i>
-                <p id="temperature"></p>
+            <div class="col-md-6 col-xs-12">
+                <div class="weatherBox">
+                    <p id="date"></p>
+                    <p id="location"></p>
+                    <p id="summary"></p>
+                    <div class="row">
+                        <div class="col-md-6 col-xs-6">
+                            <i id="icon" class=""></i>
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            <p id="temperature"></p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
             <div class="col-md-6 col-xs-12 text-center details">
                 <div class="col-md-6 col-xs-6">
-                    <p><i class="wi wi-thermometer"></i>  Feels Like</p>
+                    <p><i class="wi wi-thermometer"></i> Feels Like</p>
                     <p id="apparentTemperature"></p>
-                    <p><i class="wi wi-cloudy"></i>  Cloud Cover</p>
+                    <hr>
+                    <p><i class="wi wi-cloudy"></i> Cloud Cover</p>
                     <p id="cloudCover"></p>
-                    <p><i class="wi wi-humidity"></i>  Humidity</p>
+                    <hr>
+                    <p><i class="wi wi-humidity"></i> Humidity</p>
                     <p id="humidity"></p>
                 </div>
                 <div class="col-md-6 col-xs-6">
-                  <p><i class="wi wi-raindrops"></i>  Chance of <span id="precipType"></span></p>
-                  <p id="precipProbability"></p>
-                  <p><i class="wi wi-barometer"></i>  Pressure</p>
-                  <p id="pressure"></p>
-                  <p><i class="wi wi-strong-wind"></i>  Wind</p>
-                  <p id="windSpeed"></p>
+                    <p><i class="wi wi-raindrops"></i> Chance of <span id="precipType"></span></p>
+                    <p id="precipProbability"></p>
+                    <hr>
+                    <p><i class="wi wi-barometer"></i> Pressure</p>
+                    <p id="pressure"></p>
+                    <hr>
+                    <p><i class="wi wi-strong-wind"></i> Wind</p>
+                    <p id="windSpeed"></p>
                 </div>
-
-
             </div>
         </div>
         <div class="row">
-          <div class="col-md-12 col-xs-12 text-left">
-            <p id="forecastSummary"></p>
-          </div>
+            <div class="col-md-12 col-xs-12 text-left">
+                <p id="forecastSummary"></p>
+            </div>
         </div>
         <div class="row forecast text-center">
-
             <div class="col-md-2 col-xs-6">
                 <p id="one"></p>
                 <i id="icon1" class=""></i>
@@ -82,11 +88,10 @@
                 <i id="icon6" class=""></i>
                 <p id="temp6"></p>
             </div>
-
         </div>
+        <footer class="text-center"><i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by anya92. Powered by <a href="https://darksky.net/poweredby/" target="_blank">Dark Sky.</a></footer>
     </div>
-
-
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script.js"></script>
 </body>
-
 </html>

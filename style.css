@@ -1,24 +1,96 @@
-.weatherBox {
-  margin-top: 20px;
-  padding: 20px;
-  border: 1px solid grey;
-}
-.details {
-  margin-top: 20px;
-  margin-bottom: 40px;
-  border: 1px solid grey;
+body {
+    background-image: url(8.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Advent Pro';
 }
 
-.forecast {
-  padding: 20px;
-  border: 1px solid grey;
+.weatherBox {
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-top: 40px;
+    padding: 20px 20px 0px 20px;
 }
-p {
+
+.details {
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-top: 40px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.details .wi {
+    display: inline-block;
+    margin: 10px;
+    font-size: 25px;
+}
+
+.details p {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.forecast div {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.forecast p {
+    font-size: 22px;
+}
+
+.forecast .wi {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+hr {
+    color: white;
+}
+
+footer {
+    margin-bottom: 5px;
+}
+a {
+  color: black;
   font-weight: bold;
 }
-.wi {
-  display: inline-block;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: 40px;
+#date {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+#location {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#summary {
+    font-size: 20px;
+}
+
+#icon {
+    font-size: 70px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#temperature {
+    font-size: 70px;
+    font-weight: bold;
+    text-align: right;
+    margin-bottom: 0;
+}
+
+#forecastSummary {
+    font-size: 22px;
+}
+
+@media all and (max-width:400px) {
+    .details p {
+        font-size: 18px;
+    }
 }
