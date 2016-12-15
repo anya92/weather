@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -10,20 +11,30 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Advent+Pro:300,500" rel="stylesheet">
 </head>
+
 <body>
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-xs-12">
                 <div class="weatherBox">
-                    <p id="date"></p>
-                    <p id="location"></p>
-                    <p id="summary"></p>
+                    <div class="col-md-10 col-xs-10">
+                        <p id="date"></p>
+                        <p id="location"></p>
+                        <p id="summary"></p>
+                    </div>
+                    <div class="col-md-2 col-xs-2">
+                        <div class="switch">
+                            <input id="cmn-toggle-7" class="cmn-toggle cmn-toggle-yes-no" type="checkbox">
+                            <label for="cmn-toggle-7" data-on="&deg;F" data-off="&deg;C"></label>
+                        </div>
+                    </div>
+
                     <div class="row">
                         <div class="col-md-6 col-xs-6">
                             <i id="icon" class=""></i>
                         </div>
                         <div class="col-md-6 col-xs-6">
-                            <p id="temperature"></p>
+                            <p id="temperature" class="celsius"></p>
                         </div>
                     </div>
 
@@ -94,4 +105,5 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="script.js"></script>
 </body>
+
 </html>

@@ -54,10 +54,12 @@ hr {
 footer {
     margin-bottom: 5px;
 }
+
 a {
-  color: black;
-  font-weight: bold;
+    color: black;
+    font-weight: bold;
 }
+
 #date {
     font-size: 18px;
     font-weight: 300;
@@ -93,4 +95,63 @@ a {
     .details p {
         font-size: 18px;
     }
+}
+
+
+/* The switch - the box around the slider */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+
+/*Switcher*/
+
+.switch input {
+    display: none;
+}
+
+input.cmn-toggle-yes-no+label {
+    padding: 2px;
+    width: 120px;
+    height: 60px;
+}
+
+input.cmn-toggle-yes-no+label:before, input.cmn-toggle-yes-no+label:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    line-height: 35px;
+}
+
+input.cmn-toggle-yes-no+label:before {
+    background-color: rgba(255, 255, 255, 0.6);
+    content: attr(data-off);
+    transition: transform 0.5s;
+    backface-visibility: hidden;
+}
+
+input.cmn-toggle-yes-no+label:after {
+    background-color: rgba(255, 255, 255, 0.6);
+    content: attr(data-on);
+    transition: transform 0.5s;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+input.cmn-toggle-yes-no:checked+label:before {
+    transform: rotateY(180deg);
+}
+
+input.cmn-toggle-yes-no:checked+label:after {
+    transform: rotateY(0);
 }
