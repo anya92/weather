@@ -17,17 +17,17 @@
         <div class="row">
             <div class="col-md-6 col-xs-12">
                 <div class="weatherBox">
-                        <p id="date"></p>
-                        <p id="location"></p>
+                    <p id="date"></p>
+                    <p id="location"></p>
                     <div class="row">
                         <div class="col-md-10 col-xs-8">
                             <p id="summary"></p>
                         </div>
                         <div class="col-md-2 col-xs-4">
-                          <div class="switch">
-                              <input id="cmn-toggle-7" class="cmn-toggle cmn-toggle-yes-no" type="checkbox">
-                              <label for="cmn-toggle-7" data-on="&deg;F" data-off="&deg;C"></label>
-                          </div>
+                            <div class="switch">
+                                <input id="cmn-toggle-7" class="cmn-toggle cmn-toggle-yes-no" type="checkbox">
+                                <label for="cmn-toggle-7" data-on="&deg;C" data-off="&deg;F"></label>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -41,26 +41,30 @@
 
                 </div>
             </div>
-            <div class="col-md-6 col-xs-12 text-center details">
-                <div class="col-md-6 col-xs-6">
-                    <p><i class="wi wi-thermometer"></i> Feels Like</p>
-                    <p id="apparentTemperature"></p>
-                    <hr>
-                    <p><i class="wi wi-cloudy"></i> Cloud Cover</p>
-                    <p id="cloudCover"></p>
-                    <hr>
-                    <p><i class="wi wi-humidity"></i> Humidity</p>
-                    <p id="humidity"></p>
-                </div>
-                <div class="col-md-6 col-xs-6">
-                    <p><i class="wi wi-raindrops"></i> Chance of <span id="precipType"></span></p>
-                    <p id="precipProbability"></p>
-                    <hr>
-                    <p><i class="wi wi-barometer"></i> Pressure</p>
-                    <p id="pressure"></p>
-                    <hr>
-                    <p><i class="wi wi-strong-wind"></i> Wind</p>
-                    <p id="windSpeed"></p>
+            <div class="col-md-6 col-xs-12 text-center ">
+                <div class="details">
+                    <div class="row">
+                        <div class="col-md-6 col-xs-12">
+                            <p class="detailTitle"><i class="wi wi-thermometer"></i> Feels Like</p>
+                            <p id="apparentTemperature"></p>
+                            <hr>
+                            <p class="detailTitle"><i class="wi wi-cloudy"></i> Cloud Cover</p>
+                            <p id="cloudCover"></p>
+                            <hr>
+                            <p class="detailTitle"><i class="wi wi-humidity"></i> Humidity</p>
+                            <p id="humidity"></p>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <p class="detailTitle"><i class="wi wi-raindrops"></i> Chance of <span id="precipType"></span></p>
+                            <p id="precipProbability"></p>
+                            <hr>
+                            <p class="detailTitle"><i class="wi wi-barometer"></i> Pressure</p>
+                            <p id="pressure"></p>
+                            <hr>
+                            <p class="detailTitle"><i class="wi wi-strong-wind"></i> Wind</p>
+                            <p id="windSpeed"></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -103,6 +107,7 @@
         </div>
         <footer class="text-center"><i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by anya92. Powered by <a href="https://darksky.net/poweredby/" target="_blank">Dark Sky.</a></footer>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="script.js"></script>
 </body>
