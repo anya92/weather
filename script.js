@@ -1,55 +1,48 @@
-$(document).ready(function() {
+$(document).ready(function () {
     var summary, icon, temperature, apparentTemperature, cloudCover, humidity, precipProbability, precipType, pressure, windSpeed, forecastSummary;
     var tempFahr, apparentTempFahr;
     var icons = {
-        "rain": "wi wi-forecast-io-rain",
-        "day-sunny": "wi wi-forecast-io-clear-day",
-        "clear-day": "wi wi-forecast-io-clear-day",
-        "night-clear": "wi wi-forecast-io-clear-night",
-        "clear-night": "wi wi-forecast-io-clear-night",
-        "snow": "wi wi-forecast-io-snow",
-        "sleet": "wi wi-forecast-io-sleet",
-        "strong-wind": "wi wi-forecast-io-wind",
-        "fog": "wi wi-forecast-io-fog",
-        "wind": "wi wi-yahoo-21",
-        "cloudy": "wi wi-cloudy",
-        "day-cloudy": "wi wi-forecast-io-partly-cloudy-day",
-        "partly-cloudy-day": "wi wi-forecast-io-partly-cloudy-day",
-        "night-cloudy": "wi wi-forecast-io-partly-cloudy-night",
-        "partly-cloudy-night": "wi wi-forecast-io-partly-cloudy-night",
-        "hail": "wi wi-forecast-io-hail",
-        "thunderstorm": "wi wi-forecast-io-thunderstorm",
-        "tornado": "wi wi-forecast-io-tornado"
+        "rain": "wi wi-forecast-io-rain"
+        , "day-sunny": "wi wi-forecast-io-clear-day"
+        , "clear-day": "wi wi-forecast-io-clear-day"
+        , "night-clear": "wi wi-forecast-io-clear-night"
+        , "clear-night": "wi wi-forecast-io-clear-night"
+        , "snow": "wi wi-forecast-io-snow"
+        , "sleet": "wi wi-forecast-io-sleet"
+        , "strong-wind": "wi wi-forecast-io-wind"
+        , "fog": "wi wi-forecast-io-fog"
+        , "wind": "wi wi-yahoo-21"
+        , "cloudy": "wi wi-cloudy"
+        , "day-cloudy": "wi wi-forecast-io-partly-cloudy-day"
+        , "partly-cloudy-day": "wi wi-forecast-io-partly-cloudy-day"
+        , "night-cloudy": "wi wi-forecast-io-partly-cloudy-night"
+        , "partly-cloudy-night": "wi wi-forecast-io-partly-cloudy-night"
+        , "hail": "wi wi-forecast-io-hail"
+        , "thunderstorm": "wi wi-forecast-io-thunderstorm"
+        , "tornado": "wi wi-forecast-io-tornado"
     };
     var newIcon;
     var city;
-    //var cityURL = 'https://ipinfo.io/json';
-    var cityURL2 = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=13.02761,77.59317&sensor=true';
-    // getting city name
-    //  $.getJSON(cityURL2, function(response) {
-    //city = response.city;
-    //$("#location").html('<i class="fa fa-map-marker"></i>' + "  " + city);
-    //    console.log(response);
-    //});
-    // getting date
+    // DATE
     function getFormattedDate(today) {
         var week = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
-        var month = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
-            'September', 'October', 'November', 'December');
+        var month = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
         var day = week[today.getDay()];
         var dd = today.getDate();
         var mm = month[today.getMonth()];
         var sup;
         if (dd === 1 || dd === 21 || dd === 31) {
             sup = 'st';
-        } else if (dd === 2 || dd === 22) {
+        }
+        else if (dd === 2 || dd === 22) {
             sup = 'nd';
-        } else if (dd === 3 || dd === 23) {
+        }
+        else if (dd === 3 || dd === 23) {
             sup = 'rd';
-        } else {
+        }
+        else {
             sup = 'th';
         }
-        //console.log(day4);
         return day + ', ' + dd + '<sup>' + sup + '</sup>' + ' ' + mm;
     }
     var date = new Date();
@@ -57,33 +50,31 @@ $(document).ready(function() {
     $("#date").html(currentDate);
 
     function getWeather() {
-        //location
+        // geolocation
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(locationSuccess);
-        } else {
+        }
+        else {
             showError("Your browser does not support Geolocation!");
         }
 
         function locationSuccess(position) {
             var lat = position.coords.latitude;
             var lon = position.coords.longitude;
-            var key = '7454b19791bd732893f680d7158c2b08';
-            var lang = 'pl';
-
+            var key = '7454b19791bd732893f680d7158c2b08'; 
+            var lang = 'en';
             var cityURL2 = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lon + '&sensor=true';
-            //var cityURL2 = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=43.683333,-79.466667&sensor=true';
-            // getting city name
-            $.getJSON(cityURL2, function(response) {
+            // city name
+            $.getJSON(cityURL2, function (response) {
                 city = response.results[0].address_components[2].short_name;
                 var area = response.results[0].address_components[4].short_name;
                 $("#location").html('<i class="fa fa-map-marker"></i>' + "  " + city + ', ' + area);
-
             });
             // request to DarkSky API
             $.ajax({
-                url: 'https://api.darksky.net/forecast/' + key + '/' + lat + ',' + lon + '?units=si&exclude=minutely,hourly,alerts,flags&lang=' + lang,
-                dataType: 'jsonp',
-                success: function(data) {
+                url: 'https://api.darksky.net/forecast/' + key + '/' + lat + ',' + lon + '?units=si&exclude=minutely,hourly,alerts,flags&lang=' + lang
+                , dataType: 'jsonp'
+                , success: function (data) {
                     summary = data.currently.summary;
                     icon = data.currently.icon;
                     newIcon = icons[icon];
@@ -91,9 +82,9 @@ $(document).ready(function() {
                     tempFahr = Math.floor(temperature * 9 / 5 + 32);
                     apparentTemperature = Math.floor(data.currently.apparentTemperature);
                     apparentTempFahr = Math.floor(apparentTemperature * 9 / 5 + 32);
-                    cloudCover = data.currently.cloudCover * 100;
-                    humidity = data.currently.humidity * 100;
-                    precipProbability = data.currently.precipProbability * 100;
+                    cloudCover = Math.round(data.currently.cloudCover * 100);
+                    humidity = Math.round(data.currently.humidity * 100);
+                    precipProbability = Math.round(data.currently.precipProbability * 100);
                     precipType = data.currently.precipType;
                     pressure = Math.floor(data.currently.pressure);
                     windSpeed = Math.floor(data.currently.windSpeed);
@@ -112,9 +103,7 @@ $(document).ready(function() {
                     $("#pressure").html(pressure + " hPa");
                     $("#windSpeed").html(windSpeed + " m/s");
                     $("#forecastSummary").html(forecastSummary + ".");
-                    // switch temperature button
-                    //$('#cmn-toggle-7')[0].checked = false;
-                    $('#cmn-toggle-7').on('change', function() {
+                    $('#cmn-toggle-7').on('change', function () {
                         if (this.checked) {
                             $("#temperature").html(tempFahr + "&deg;F");
                             $("#apparentTemperature").html(apparentTempFahr + "&deg;F");
@@ -124,7 +113,8 @@ $(document).ready(function() {
                             $("#temp4").html(maxTemp4F + '&deg;/' + minTemp4F + '&deg;');
                             $("#temp5").html(maxTemp5F + '&deg;/' + minTemp5F + '&deg;');
                             $("#temp6").html(maxTemp6F + '&deg;/' + minTemp6F + '&deg;');
-                        } else {
+                        }
+                        else {
                             $("#temperature").html(temperature + "&deg;C");
                             $("#apparentTemperature").html(apparentTemperature + "&deg;C");
                             $("#temp1").html(maxTemp1 + '&deg;/' + minTemp1 + '&deg;');
@@ -213,9 +203,7 @@ $(document).ready(function() {
                     $("#icon6").attr('class', newIcon6);
                 }
             });
-
         }
     }
     getWeather();
-
 });

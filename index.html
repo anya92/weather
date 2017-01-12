@@ -9,8 +9,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Advent+Pro:300,500" rel="stylesheet">
-</head>
+    <link href="https://fonts.googleapis.com/css?family=Advent+Pro:300,500" rel="stylesheet"> </head>
 
 <body>
     <div class="container">
@@ -19,7 +18,7 @@
                 <div class="weatherBox">
                     <p id="date"></p>
                     <p id="location"></p>
-                    <div class="row">
+                    <div class="row" style="height: 50px;">
                         <div class="col-md-10 col-xs-8">
                             <p id="summary"></p>
                         </div>
@@ -31,36 +30,31 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 col-xs-6">
-                            <i id="icon" class=""></i>
-                        </div>
+                        <div class="col-md-6 col-xs-6"> <i id="icon" class=""></i> </div>
                         <div class="col-md-6 col-xs-6">
                             <p id="temperature" class=""></p>
                         </div>
                     </div>
-
                 </div>
             </div>
             <div class="col-md-6 col-xs-12 text-center ">
-                <div class="details">
-                    <div class="row">
-                        <div class="col-md-6 col-xs-12">
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <div class="details">
                             <p class="detailTitle"><i class="wi wi-thermometer"></i> Feels Like</p>
                             <p id="apparentTemperature"></p>
-                            <hr>
                             <p class="detailTitle"><i class="wi wi-cloudy"></i> Cloud Cover</p>
                             <p id="cloudCover"></p>
-                            <hr>
                             <p class="detailTitle"><i class="wi wi-humidity"></i> Humidity</p>
                             <p id="humidity"></p>
                         </div>
-                        <div class="col-md-6 col-xs-12">
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="details">
                             <p class="detailTitle"><i class="wi wi-raindrops"></i> Chance of <span id="precipType"></span></p>
                             <p id="precipProbability"></p>
-                            <hr>
                             <p class="detailTitle"><i class="wi wi-barometer"></i> Pressure</p>
                             <p id="pressure"></p>
-                            <hr>
                             <p class="detailTitle"><i class="wi wi-strong-wind"></i> Wind</p>
                             <p id="windSpeed"></p>
                         </div>
@@ -75,39 +69,32 @@
         </div>
         <div class="row forecast text-center">
             <div class="col-md-2 col-xs-6">
-                <p id="one"></p>
-                <i id="icon1" class=""></i>
+                <p id="one"></p> <i id="icon1" class=""></i>
                 <p id="temp1"></p>
             </div>
             <div class="col-md-2 col-xs-6">
-                <p id="two"></p>
-                <i id="icon2" class=""></i>
+                <p id="two"></p> <i id="icon2" class=""></i>
                 <p id="temp2"></p>
             </div>
             <div class="col-md-2 col-xs-6">
-                <p id="three"></p>
-                <i id="icon3" class=""></i>
+                <p id="three"></p> <i id="icon3" class=""></i>
                 <p id="temp3"></p>
             </div>
             <div class="col-md-2 col-xs-6">
-                <p id="four"></p>
-                <i id="icon4" class=""></i>
+                <p id="four"></p> <i id="icon4" class=""></i>
                 <p id="temp4"></p>
             </div>
             <div class="col-md-2 col-xs-6">
-                <p id="five"></p>
-                <i id="icon5" class=""></i>
+                <p id="five"></p> <i id="icon5" class=""></i>
                 <p id="temp5"></p>
             </div>
             <div class="col-md-2 col-xs-6">
-                <p id="six"></p>
-                <i id="icon6" class=""></i>
+                <p id="six"></p> <i id="icon6" class=""></i>
                 <p id="temp6"></p>
             </div>
         </div>
         <footer class="text-center"><i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by anya92. Powered by <a href="https://darksky.net/poweredby/" target="_blank">Dark Sky.</a></footer>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="script.js"></script>
 </body>
